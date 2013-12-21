@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Drank</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}?v=1.1">
+  </head>
+  <body>
+    <nav class='row'>
+    {% if g.user.is_authenticated() %}
+      Welcome, <a href='/profiles/{{ g.user.handle }}'>{{ g.user.display_name }}</a> |
+      <a href='/profiles/{{ g.user.handle }}'>
+        <img src='{{ g.user.image_url }}' class='avatar'/>
+      </a>
+      <a href='/logout'>
+        <i class='fa fa-power-off'>
+          logout
+        </i>
+      </a>
+    {% else %}
+      login via:
+      <a href='/login/twitter'>
+        <i class='fa fa-twitter'>
+          Twitter
+        </i>
+      </a> |
+      <a href='/login/github'>
+        <i class='fa fa-github'>
+          Github
+        </i>
+      </a> |
+      <a href='/login/linkedin'>
+        <i class='fa fa-linkedin'>
+          LinkedIn
+        </i>
+      </a>
+    {% endif %}
+    </nav>
+    <div class='row'>
+      <div class='twelve columns'>
+        <h4 class='lead'>Po' Up</h4>
+        <div>
+          {% with messages = get_flashed_messages() %}
+          {% if messages %}
+          <ul>
+            {% for message in messages %}
+            <li class='{{ message.split(':')[0].lower() }} alert'>{{ message }} </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+          {% endwith %}
+        </div>
+        {% block content %}
+        {% endblock %}
+      </div>
+     </div>
+
+  </body>
+  <script data-main="{{ url_for('static', filename='js/main.js') }}" src="{{ url_for('static', filename='components/requirejs.js') }}">
+  </script>
+</html>

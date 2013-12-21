@@ -1,0 +1,172 @@
+@mixin profile-photo() {
+  .image.photo {
+    float: left;
+    margin: 0;
+    img {
+      max-width: 150px;
+      max-height: 150px;
+    }
+  }
+}
+
+@mixin outline($color: $danger-color) {
+  outline: 1px solid $color;
+}
+
+
+nav.row {
+  border-bottom: 1px solid $body-font-color;
+  padding: 0;
+  margin-bottom: 20px;
+  text-align: right;
+
+  .avatar {
+    margin: 0 0 -5px 0;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+
+.welcome {
+  padding: 10px 10px 0 0;
+  @include profile-photo;
+  .email-request {
+    float: left;
+    margin: 0 0 0 20px;
+    h3 {
+      padding: 0 0 20px 0;
+    }
+   .append.field {
+    float: left;
+    margin: 5px 0 0 0;
+   }
+  }
+}
+
+.profile {
+  .meta {
+    float: left;
+    margin: 0;
+    @include profile-photo;
+    .timestamp {
+      float: left;
+      .attribute {
+        float: left;
+        margin: 5px 0 0 0;
+        width: 100%;
+      }
+    }
+  }
+  .user-info.field {
+    float: left;
+    margin: 0 0 0 20px;
+    .attribute {
+      float: left;
+      clear: left;
+      margin:  0 0 10px 0;
+      width: 320px;
+      i {
+        :before {
+          padding: 0 5px 0 0;
+        }
+        :hover {
+          cursor: pointer;
+        }
+      }
+      .description {
+        float: left;
+        font-weight: bolder;
+      }
+      input {
+        max-width: 320px;
+      }
+      .data {
+        float: left;
+        clear: left;
+      }
+      .new-handle {
+        float: left;
+        clear: left;
+        font-size: smaller;
+        a {
+          color: $primary-color;
+        }
+        a:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .submit.field {
+      clear: left;
+      float: left;
+    }
+  }
+}
+
+ul.current-users {
+  li {
+    .meta {
+      float: left;
+      margin: 0 0 20px 0;
+      .image.photo {
+        float: left;
+        margin: 0;
+        max-width: 96px;
+        max-height: 96px;
+      }
+    }
+    .user-info {
+      float: left;
+      margin: 0 0 0 10px;
+      font-size: 1em;
+      .handle{
+        float: left;
+        clear: left;
+        margin: -5px 0 0 0;
+      }
+      .name {
+        float: left;
+        clear: left;
+        font-size: 1.4em;
+        padding: 0;
+        margin: -8px 0 0 0;
+        a {
+          color: $body-font-color;
+        }
+        a:hover {
+          text-decoration: underline;
+        }
+      }
+      ul.user-social-info {
+        margin: 0;
+        padding: 0;
+        float: left;
+        clear: left;
+        display: inline-block;
+        li {
+          float: left;
+          margin: 0 10px 0 0;
+        }
+        li:last-child {
+          margin: 0;
+        }
+      }
+      .attributes {
+        float: left;
+        clear: left;
+        font-size: .9em;
+        margin: -1px 0 0 0;
+        .datestamp {
+          float: left;
+          clear: left;
+          line-height: 1.3em;
+          font-size: smaller;
+          .title {
+            font-weight: bolder;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+{% block content %}
+<ul class='current-users'>
+{% for user in profiles %}
+  <li>
+    <div class='meta'>
+      <div class='image photo ttip' data-tooltip='{{ user.status }}'>
+        <a href='/profiles/{{ user.handle }}'>
+          <img src='{{ user.image_url }}' class='avatar'/>
+        </a>
+      </div>
+    </div>
+    <div class='user-info'>
+      <div class='handle'>
+        <a href='/profiles/{{ user.handle }}'>{{ user.handle }}</a>
+      </div>
+      <div class='name lead'>
+        <a href='/profiles/{{ user.handle }}'>{{ user.display_name }}</a>
+      </div>
+      <ul class='user-social-info'>
+        {% for social in user.social_handles.all() %}
+        <li>
+          <a href='{{ social.network_url }}', target='_blank'>
+            <i class='fa fa-{{ social.network }}'></i>
+          </a>
+        </li>
+        {% endfor %}
+        <li>
+          <a href='mailto:{{ user.email }}', target='_blank'>
+            <i class='fa fa-envelope'></i>
+          </a>
+        </li>
+      </ul>
+      <div class='attributes'>
+        <div class='datestamp'>
+          <span class='title'>joined on:</span> {{ user.joined_date.strftime('%d.%m.%Y') }}
+        </div>
+        <div class='datestamp'>
+          <span class='title'>last login:</span> {{ user.last_login.strftime('%d.%m.%Y') }}
+        </div>
+      </div>
+    </div>
+    <div class='clearfix'></div>
+  </li>
+{% endfor %}
+</ul>
+{% endblock %}

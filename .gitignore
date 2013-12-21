@@ -46,10 +46,11 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 
+.DS_Store
+
 # DSL stuff
 *.db
 .sass-cache
-drank.db
 db_repository
 flask/
 node_modules
