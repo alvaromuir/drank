@@ -8,8 +8,8 @@ SECRET_KEY = '53hd+umt@*qxmx(c5y33eezoi#qs1el%j9n6v-374nbe_)$b00muiral'
 
 SOCIAL_KEYS = {
     'twitter': {
-        'consumer_key'      : 'Xw8ruTX0GSqfwHBfzskjg',
-        'consumer_secret'   : 'aUGNSJub1uxT9PzmgzmpfZfeSfAgJLTREDzW4M',
+        'consumer_key'      : '',
+        'consumer_secret'   : '',
         'request_token_url' : 'https://api.twitter.com/oauth/request_token',
         'access_token_url'  : 'https://api.twitter.com/oauth/access_token',
         'authorize_url'     : 'https://api.twitter.com/oauth/authorize',
@@ -19,8 +19,8 @@ SOCIAL_KEYS = {
         'userinfo_url'      : 'https://api.twitter.com/1.1/users/show.json'
     },
     'github': {
-        'client_id'         : '0a8f9f1606eb8bf5bfc4',
-        'client_secret'     : '064b18ea4fa2a047baeb7e9c7affca1eaec0bfd4',
+        'client_id'         : '',
+        'client_secret'     : '',
         'authorize_url'     : 'https://github.com/login/oauth/authorize',
         'access_token_url'  : 'https://github.com/login/oauth/access_token',
         'redirect_uri'      : 'http://127.0.0.1:5000/auth/github',
@@ -29,8 +29,8 @@ SOCIAL_KEYS = {
         'scopes'            : 'user'
     },
     'linkedin': {
-        'api_key'           : '77brlp68poky60',
-        'secret_key'        : '4QrmbfokgnBuwd6Q',
+        'api_key'           : '',
+        'secret_key'        : '',
         'access_token_url'  : 'https://www.linkedin.com/uas/oauth2/accessToken',
         'authorize_url'     : 'https://www.linkedin.com/uas/oauth2/authorization',
         'callback_url'      : 'http://127.0.0.1:5000',
